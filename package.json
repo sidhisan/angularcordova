@@ -1,0 +1,47 @@
+{
+  "name": "angular-hello-world",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build-prod": "ng build --output-path cordova/www/ --base-href .",
+    "prepare-ios": "cd ./cordova && cordova prepare ios && cd ..",
+    "prepare-ios-release": "cd ./cordova && cordova prepare ios --release && cd ..",
+    "build-ios": "cd ./cordova && cordova build ios && cd ..",
+    "build-ios-release": "cd ./cordova && cordova build ios --release && cd ..",
+    "create-ios-debug": "npm run build-prod && npm run prepare-ios",
+    "create-ios-release": "npm run build-prod && npm run prepare-ios-release",
+    "build-android": "cd ./cordova && cordova build android && cd ..",
+    "build-android-release": "cd ./cordova && cordova build android --release && cd ..",
+    "create-android-debug": "npm run build-prod && npm run build-android",
+    "create-android-release": "npm run build-prod && npm run build-android-release"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^7.2.0",
+    "@angular/common": "^7.2.0",
+    "@angular/compiler": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/forms": "^7.2.0",
+    "@angular/http": "^7.2.0",
+    "@angular/platform-browser": "^7.2.0",
+    "@angular/platform-browser-dynamic": "^7.2.0",
+    "@angular/router": "^7.2.0",
+    "core-js": "^2.6.2",
+    "rxjs": "^6.1.0",
+    "tslib": "^1.9.0",
+    "zone.js": "^0.8.27"
+  },
+  "devDependencies": {
+    "@angular/cli": "^7.3.1",
+    "@angular/compiler-cli": "^7.2.0",
+    "@angular/language-service": "^7.2.0",
+    "typescript": "3.2.2",
+    "@angular-devkit/build-angular": "~0.12.0"
+  }
+}
