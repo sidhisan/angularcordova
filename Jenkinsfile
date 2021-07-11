@@ -10,12 +10,6 @@ pipeline {
         }
     }
 
-    stage('IOS Build') {
-        steps {
-            sh 'npm run build-ios-release'
-        } 
-    }
-
     stage('Android Build') {
         steps {
             sh 'npm run build-android-release'
