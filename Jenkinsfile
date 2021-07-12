@@ -9,10 +9,10 @@ pipeline {
             sh 'npm install'
         }
     }
-
-    stage('Android Build') {
+    boolean testPassed = true
+    stage('Android is Available') {
         steps {
-            sh 'npm run build-android-release'
+            sh 'cd ./cordova && test -d "platforms/android" && echo "Found/Exists" || cordova platforms add android && cd ..'
         }
     }
 
