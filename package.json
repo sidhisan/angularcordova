@@ -21,7 +21,7 @@
     "build-android-release": "cd ./cordova && rm -f platforms/android/build/outputs/apk/release/android-release-unsigned.apk && cordova build android --release && cd ..",
     "create-android-debug": "npm run build-prod && npm run build-android",
     "create-android-release": "npm run build-prod && npm run build-android-release",
-    "sign-android-release": "cd ./cordova && rm -f platforms/android/build/outputs/apk/release/android-release-signed.apk && jarsigner -storepass Sid@Dev2K -keystore firstkeystore platforms/android/build/outputs/apk/release/android-release-unsigned.apk firstkeystore && zipalign -v 4 platforms/android/build/outputs/apk/release/android-release-unsigned.apk platforms/android/build/outputs/apk/release/android-release-signed.apk && cd ..",
+    "sign-android-release": "cd ./cordova && rm -f platforms/android/build/outputs/apk/release/android-release-signed.apk && jarsigner -storepass Sid@Dev2K -keystore firstkeystore platforms/android/build/outputs/apk/release/android-release-unsigned.apk firstkeystore && ./zipalign -v 4 platforms/android/build/outputs/apk/release/android-release-unsigned.apk platforms/android/build/outputs/apk/release/android-release-signed.apk && cd ..",
     "create-sign-android-release": "npm run create-android-release && npm run sign-android-release"
   },
   "private": true,
