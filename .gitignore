@@ -48,7 +48,6 @@ cordova/platforms/android
 cordova/platforms/browser
 cordova/platforms/ios
 cordova/plugins
-cordova/www/*
 cordova/package.json
 package-lock.json
 cordova/package-lock.json
