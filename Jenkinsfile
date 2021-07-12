@@ -3,7 +3,7 @@ pipeline {
     environment {
         PATH='/usr/local/bin:/usr/bin:/bin'
     }
-    
+
     stages {
       stage('NPM Setup') {
         steps {
@@ -17,9 +17,15 @@ pipeline {
         }
     }
 
-    stage('APK Sign') {
+    stage('App Build') {
         steps {
-            sh 'npm run create-sign-android-release'
+            sh 'npm run create-android-release '
+        }
+    }
+
+    stage('App Sign') {
+        steps {
+            sh 'npm run sign-android-release'
         }
     }
 
