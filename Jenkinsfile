@@ -3,13 +3,14 @@ pipeline {
     environment {
         PATH='/usr/local/bin:/usr/bin:/bin'
     }
+    
     stages {
       stage('NPM Setup') {
         steps {
             sh 'npm install'
         }
     }
-    boolean testPassed = true
+
     stage('Android is Available') {
         steps {
             sh 'cd ./cordova && test -d "platforms/android" && echo "Found/Exists" || cordova platforms add android && cd ..'
